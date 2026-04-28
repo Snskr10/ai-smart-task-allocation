@@ -1,0 +1,283 @@
+{
+  "employees": [
+    {
+      "id": "emp-1",
+      "name": "Alex Rivera",
+      "role": "Senior Full Stack",
+      "skills": ["React", "Node.js", "TypeScript", "MongoDB", "Stripe"]
+    },
+    {
+      "id": "emp-2",
+      "name": "Sarah Chen",
+      "role": "Backend Engineer",
+      "skills": ["Python", "PostgreSQL", "AWS", "Docker", "REST APIs"]
+    },
+    {
+      "id": "emp-3",
+      "name": "Marcus Johnson",
+      "role": "Frontend Developer",
+      "skills": ["React", "CSS", "Figma", "Accessibility", "Tailwind"]
+    },
+    {
+      "id": "emp-4",
+      "name": "Priya Patel",
+      "role": "DevOps Engineer",
+      "skills": ["Docker", "Kubernetes", "CI/CD", "Terraform", "Monitoring"]
+    },
+    {
+      "id": "emp-5",
+      "name": "Jordan Lee",
+      "role": "QA Engineer",
+      "skills": ["Jest", "Cypress", "API Testing", "Playwright", "Regression"]
+    },
+    {
+      "id": "emp-6",
+      "name": "Lena Fischer",
+      "role": "Machine Learning Engineer",
+      "skills": ["Python", "TensorFlow", "scikit-learn", "Pandas", "REST APIs"]
+    },
+    {
+      "id": "emp-7",
+      "name": "Omar Khalid",
+      "role": "Cloud Architect",
+      "skills": ["AWS", "Terraform", "Kubernetes", "CI/CD", "Monitoring"]
+    },
+    {
+      "id": "emp-8",
+      "name": "Sofia Rossi",
+      "role": "UI/UX Designer",
+      "skills": ["Figma", "CSS", "Accessibility", "Tailwind", "React"]
+    },
+    {
+      "id": "emp-9",
+      "name": "Daniel Okafor",
+      "role": "Data Engineer",
+      "skills": ["Python", "PostgreSQL", "Pandas", "AWS", "Docker"]
+    },
+    {
+      "id": "emp-10",
+      "name": "Mei Tanaka",
+      "role": "Security Engineer",
+      "skills": ["Node.js", "REST APIs", "Docker", "CI/CD", "AWS"]
+    },
+    {
+      "id": "emp-11",
+      "name": "Carlos Mendoza",
+      "role": "Mobile Developer",
+      "skills": ["React", "TypeScript", "CSS", "Accessibility", "Figma"]
+    },
+    {
+      "id": "emp-12",
+      "name": "Aisha Nwosu",
+      "role": "Backend Engineer",
+      "skills": ["Python", "PostgreSQL", "REST APIs", "Docker", "MongoDB"]
+    },
+    {
+      "id": "emp-13",
+      "name": "Ethan Brooks",
+      "role": "Frontend Developer",
+      "skills": ["React", "TypeScript", "Tailwind", "CSS", "Accessibility"]
+    },
+    {
+      "id": "emp-14",
+      "name": "Fatima Al-Rashid",
+      "role": "DevOps Engineer",
+      "skills": ["Docker", "Kubernetes", "Terraform", "CI/CD", "Monitoring"]
+    },
+    {
+      "id": "emp-15",
+      "name": "Lucas Oliveira",
+      "role": "Full Stack Developer",
+      "skills": ["React", "Node.js", "MongoDB", "TypeScript", "REST APIs"]
+    },
+    {
+      "id": "emp-16",
+      "name": "Yuki Nakamura",
+      "role": "QA Automation Engineer",
+      "skills": ["Jest", "Playwright", "Cypress", "API Testing", "Python"]
+    },
+    {
+      "id": "emp-17",
+      "name": "Kofi Asante",
+      "role": "Data Scientist",
+      "skills": ["Python", "TensorFlow", "Pandas", "scikit-learn", "PostgreSQL"]
+    },
+    {
+      "id": "emp-18",
+      "name": "Nina Petrov",
+      "role": "Backend Engineer",
+      "skills": ["Node.js", "PostgreSQL", "REST APIs", "AWS", "Docker"]
+    },
+    {
+      "id": "emp-19",
+      "name": "Ravi Sharma",
+      "role": "Platform Engineer",
+      "skills": ["Kubernetes", "Docker", "CI/CD", "Terraform", "AWS"]
+    },
+    {
+      "id": "emp-20",
+      "name": "Isabelle Dupont",
+      "role": "Full Stack Developer",
+      "skills": ["React", "Python", "MongoDB", "Figma", "REST APIs"]
+    }
+  ],
+  "sprints": [],
+  "tasks": [
+    {
+      "id": "task-1",
+      "title": "Payment Gateway Integration",
+      "description": "Integrate Stripe checkout and webhooks for subscriptions.",
+      "requiredSkills": ["React", "Node.js", "Stripe"],
+      "assignedTo": "emp-1",
+      "deadline": "2026-03-28T00:00:00.000Z",
+      "priority": "High",
+      "status": "In Progress",
+      "progress": 45,
+      "lastUpdated": "2026-03-22T10:00:00.000Z",
+      "lastProgressUpdate": "2026-03-22T10:00:00.000Z",
+      "statusSince": "2026-03-18T09:00:00.000Z",
+      "project": "Corporate Platform Relaunch",
+      "comments": [{ "text": "Webhook handler drafted", "at": "2026-03-22T10:00:00.000Z", "authorId": "emp-1" }]
+    },
+    {
+      "id": "task-2",
+      "title": "Database Migration v2",
+      "description": "Migrate legacy user tables to new schema with zero downtime.",
+      "requiredSkills": ["Python", "PostgreSQL", "AWS"],
+      "assignedTo": "emp-2",
+      "deadline": "2026-03-24T00:00:00.000Z",
+      "priority": "High",
+      "status": "In Progress",
+      "progress": 15,
+      "lastUpdated": "2026-03-10T08:00:00.000Z",
+      "lastProgressUpdate": "2026-03-10T08:00:00.000Z",
+      "statusSince": "2026-03-10T08:00:00.000Z",
+      "project": "Corporate Platform Relaunch",
+      "comments": []
+    },
+    {
+      "id": "task-3",
+      "title": "Auth UI Refresh",
+      "description": "Redesign login and MFA screens per new brand guidelines.",
+      "requiredSkills": ["React", "Figma", "CSS"],
+      "assignedTo": "emp-3",
+      "deadline": "2026-03-30T00:00:00.000Z",
+      "priority": "Medium",
+      "status": "To Do",
+      "progress": 5,
+      "lastUpdated": "2026-03-05T14:00:00.000Z",
+      "lastProgressUpdate": "2026-03-05T14:00:00.000Z",
+      "statusSince": "2026-03-05T14:00:00.000Z",
+      "project": "Corporate Platform Relaunch",
+      "comments": []
+    },
+    {
+      "id": "task-4",
+      "title": "Kubernetes Cluster Upgrade",
+      "description": "Upgrade staging cluster to latest stable and validate workloads.",
+      "requiredSkills": ["Kubernetes", "Docker", "CI/CD"],
+      "assignedTo": "emp-4",
+      "deadline": "2026-03-25T00:00:00.000Z",
+      "priority": "High",
+      "status": "Testing",
+      "progress": 70,
+      "lastUpdated": "2026-03-22T16:00:00.000Z",
+      "lastProgressUpdate": "2026-03-12T11:00:00.000Z",
+      "statusSince": "2026-03-12T11:00:00.000Z",
+      "project": "Corporate Platform Relaunch",
+      "comments": [{ "text": "Smoke tests green on node pool A", "at": "2026-03-22T16:00:00.000Z", "authorId": "emp-4" }]
+    },
+    {
+      "id": "task-5",
+      "title": "E2E Regression Suite",
+      "description": "Expand Cypress coverage for checkout and account flows.",
+      "requiredSkills": ["Cypress", "Playwright", "API Testing"],
+      "assignedTo": "emp-5",
+      "deadline": "2026-04-02T00:00:00.000Z",
+      "priority": "Medium",
+      "status": "In Progress",
+      "progress": 55,
+      "lastUpdated": "2026-03-21T09:00:00.000Z",
+      "lastProgressUpdate": "2026-03-21T09:00:00.000Z",
+      "statusSince": "2026-03-19T09:00:00.000Z",
+      "project": "Corporate Platform Relaunch",
+      "comments": []
+    },
+    {
+      "id": "task-6",
+      "title": "API Rate Limiting",
+      "description": "Implement token bucket rate limits on public API routes.",
+      "requiredSkills": ["Node.js", "REST APIs"],
+      "assignedTo": "emp-2",
+      "deadline": "2026-03-24T00:00:00.000Z",
+      "priority": "High",
+      "status": "To Do",
+      "progress": 10,
+      "lastUpdated": "2026-03-08T12:00:00.000Z",
+      "lastProgressUpdate": "2026-03-08T12:00:00.000Z",
+      "statusSince": "2026-03-08T12:00:00.000Z",
+      "project": "Corporate Platform Relaunch",
+      "comments": []
+    },
+    {
+      "id": "task-7",
+      "title": "Design System Tokens",
+      "description": "Publish shared design tokens for web and mobile.",
+      "requiredSkills": ["Figma", "CSS", "React"],
+      "assignedTo": "emp-3",
+      "deadline": "2026-04-08T00:00:00.000Z",
+      "priority": "Low",
+      "status": "Done",
+      "progress": 100,
+      "lastUpdated": "2026-03-18T17:00:00.000Z",
+      "lastProgressUpdate": "2026-03-18T17:00:00.000Z",
+      "statusSince": "2026-03-18T17:00:00.000Z",
+      "comments": []
+    },
+    {
+      "id": "task-8",
+      "title": "Observability Dashboard",
+      "description": "Grafana boards for latency and error budgets.",
+      "requiredSkills": ["Monitoring", "Docker", "Terraform"],
+      "assignedTo": "emp-4",
+      "deadline": "2026-03-27T00:00:00.000Z",
+      "priority": "Medium",
+      "status": "In Progress",
+      "progress": 30,
+      "lastUpdated": "2026-03-22T08:00:00.000Z",
+      "lastProgressUpdate": "2026-03-22T08:00:00.000Z",
+      "statusSince": "2026-03-14T08:00:00.000Z",
+      "comments": []
+    },
+    {
+      "id": "task-9",
+      "title": "Unassigned Backlog Item",
+      "description": "Research vector search options for internal knowledge base.",
+      "requiredSkills": ["Python", "REST APIs"],
+      "assignedTo": null,
+      "deadline": "2026-04-12T00:00:00.000Z",
+      "priority": "Low",
+      "status": "To Do",
+      "progress": 0,
+      "lastUpdated": "2026-03-01T10:00:00.000Z",
+      "lastProgressUpdate": "2026-03-01T10:00:00.000Z",
+      "statusSince": "2026-03-01T10:00:00.000Z",
+      "comments": []
+    },
+    {
+      "id": "task-10",
+      "title": "Mobile Nav Bugfix",
+      "description": "Fix hamburger menu focus trap on small screens.",
+      "requiredSkills": ["React", "Accessibility", "CSS"],
+      "assignedTo": "emp-1",
+      "deadline": "2026-03-20T00:00:00.000Z",
+      "priority": "Medium",
+      "status": "Testing",
+      "progress": 85,
+      "lastUpdated": "2026-03-17T15:00:00.000Z",
+      "lastProgressUpdate": "2026-03-17T15:00:00.000Z",
+      "statusSince": "2026-03-16T10:00:00.000Z",
+      "comments": []
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+flask>=3.0.0
+flask-cors>=4.0.0
+gunicorn>=21.0.0
+
+# ML stack (CPU — scikit-learn)
+scikit-learn>=1.4.0
+numpy>=1.26.0
+joblib>=1.3.0
+
+# GPU / CUDA stack — uncomment for NVIDIA RAPIDS cuML deployment
+# (requires CUDA 12+ and nvidia-rapids conda channel or pip index)
+# cuml-cu12; extra == "cuda"

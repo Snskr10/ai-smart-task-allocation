@@ -1,0 +1,62 @@
+version: "3.9"
+
+# ──────────────────────────────────────────────────────────────────────────────
+#  SilentFlow — AI-Based Smart Task Allocation System
+#  docker compose up --build
+# ──────────────────────────────────────────────────────────────────────────────
+
+services:
+
+  # ── Backend: Python Flask + Gunicorn ────────────────────────────────────────
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+      target: production
+    container_name: silentflow-backend
+    restart: unless-stopped
+    environment:
+      PORT: "3001"
+      FLASK_ENV: production
+    ports:
+      - "3001:3001"
+    volumes:
+      # Persist the JSON database and trained ML model outside the container
+      - backend-data:/app/data
+      - ml-models:/app/models
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3001/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
+    networks:
+      - silentflow-net
+
+  # ── Frontend: React SPA served by Nginx ─────────────────────────────────────
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      target: production
+    container_name: silentflow-frontend
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    depends_on:
+      backend:
+        condition: service_healthy
+    networks:
+      - silentflow-net
+
+# ── Named volumes ──────────────────────────────────────────────────────────────
+volumes:
+  backend-data:
+    driver: local
+  ml-models:
+    driver: local
+
+# ── Networks ───────────────────────────────────────────────────────────────────
+networks:
+  silentflow-net:
+    driver: bridge

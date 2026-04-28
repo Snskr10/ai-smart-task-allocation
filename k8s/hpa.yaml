@@ -1,0 +1,45 @@
+# Horizontal Pod Autoscaler — automatically scale backend replicas
+# based on CPU utilisation (requires metrics-server installed in cluster)
+#
+# kubectl apply -f hpa.yaml
+# kubectl get hpa -n silentflow --watch
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: silentflow-backend-hpa
+  namespace: silentflow
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: silentflow-backend
+  minReplicas: 2
+  maxReplicas: 10
+  metrics:
+    # Scale out when average CPU exceeds 60%
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageUtilization: 60
+    # Scale out when average memory exceeds 400Mi
+    - type: Resource
+      resource:
+        name: memory
+        target:
+          type: AverageValue
+          averageValue: "400Mi"
+  behavior:
+    scaleUp:
+      stabilizationWindowSeconds: 60
+      policies:
+        - type: Pods
+          value: 2
+          periodSeconds: 60
+    scaleDown:
+      stabilizationWindowSeconds: 300   # 5-minute cool-down before scale-in
+      policies:
+        - type: Pods
+          value: 1
+          periodSeconds: 120

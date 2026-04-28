@@ -1,0 +1,21 @@
+﻿src/components/ui/Badge.tsx(3,20): error TS2307: Cannot find module '../lib/utils' or its corresponding type declarations.
+src/components/ui/Button.tsx(2,1): error TS6133: 'Slot' is declared but its value is never read.
+src/components/ui/Button.tsx(5,20): error TS2307: Cannot find module '../lib/utils' or its corresponding type declarations.
+src/components/ui/Card.tsx(2,20): error TS2307: Cannot find module '../lib/utils' or its corresponding type declarations.
+src/components/ui/Input.tsx(2,20): error TS2307: Cannot find module '../lib/utils' or its corresponding type declarations.
+src/pages/Analytics.tsx(94,37): error TS6133: 'entry' is declared but its value is never read.
+src/pages/ManagerDashboard.tsx(47,35): error TS2322: Type '{ hidden: { opacity: number; y: number; }; show: { opacity: number; y: number; transition: { type: string; stiffness: number; damping: number; }; }; }' is not assignable to type 'Variants'.
+  Property 'show' is incompatible with index signature.
+    Type '{ opacity: number; y: number; transition: { type: string; stiffness: number; damping: number; }; }' is not assignable to type 'Variant'.
+      Type '{ opacity: number; y: number; transition: { type: string; stiffness: number; damping: number; }; }' is not assignable to type 'TargetAndTransition'.
+        Type '{ opacity: number; y: number; transition: { type: string; stiffness: number; damping: number; }; }' is not assignable to type '{ transition?: Transition<any> | undefined; transitionEnd?: ResolvedValues$1 | undefined; }'.
+          Types of property 'transition' are incompatible.
+            Type '{ type: string; stiffness: number; damping: number; }' is not assignable to type 'Transition<any> | undefined'.
+              Type '{ type: string; stiffness: number; damping: number; }' is not assignable to type 'TransitionWithValueOverrides<any>'.
+                Type '{ type: string; stiffness: number; damping: number; }' is not assignable to type 'ValueAnimationTransition<any>'.
+                  Types of property 'type' are incompatible.
+                    Type 'string' is not assignable to type 'AnimationGeneratorType | undefined'.
+src/pages/TaskAllocation.tsx(3,47): error TS6133: 'Users' is declared but its value is never read.
+src/pages/TaskBoard.tsx(2,49): error TS1484: 'DropResult' is a type and must be imported using a type-only import when 'verbatimModuleSyntax' is enabled.
+src/pages/TaskBoard.tsx(3,24): error TS6133: 'Clock' is declared but its value is never read.
+src/pages/TaskBoard.tsx(6,1): error TS6133: 'motion' is declared but its value is never read.

@@ -1,0 +1,61 @@
+# ── Python ───────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# ── ML / AI artefacts ─────────────────────────────────────────────────────────
+backend/models/*.pkl
+backend/models/*.joblib
+backend/models/model_metadata.json
+
+# ── Database (local dev only — use volumes in production) ─────────────────────
+backend/data/db.json
+
+# ── Node / Frontend ───────────────────────────────────────────────────────────
+node_modules/
+frontend/dist/
+frontend/.vite/
+*.log
+npm-debug.log*
+
+# ── Environment secrets ───────────────────────────────────────────────────────
+.env
+.env.local
+.env.*.local
+*.env
+
+# ── IDEs ──────────────────────────────────────────────────────────────────────
+.vscode/settings.json
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# ── Docker ────────────────────────────────────────────────────────────────────
+# (Dockerfiles are committed; ignore local override files)
+docker-compose.override.yml
+
+# ── Kubernetes secrets (never commit these) ───────────────────────────────────
+k8s/secrets.yaml
+kubeconfig
+
+# ── Test / coverage ───────────────────────────────────────────────────────────
+.pytest_cache/
+.coverage
+htmlcov/
+coverage.xml

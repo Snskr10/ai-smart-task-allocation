@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: silentflow-config
+  namespace: silentflow
+data:
+  # Backend runtime configuration
+  PORT: "3001"
+  FLASK_ENV: "production"
+
+  # Silent failure detection thresholds (overrides config.py defaults)
+  STALE_DAYS: "7"
+  STUCK_STAGE_DAYS: "5"
+  DEADLINE_NEAR_DAYS: "3"
+  LOW_PROGRESS_THRESHOLD: "30"
+  MAX_SUGGESTED_ACTIVE: "5"
+  WORKLOAD_UNIT: "20"
+
+  # ML model settings
+  ML_ENABLED: "true"
+  ML_MIN_TRAINING_SAMPLES: "3"
+  ML_MODEL_TYPE: "GradientBoostingRegressor"
+  # For GPU-accelerated inference (requires nvidia-device-plugin DaemonSet):
+  # ML_MODEL_TYPE: "cuml.GradientBoostingRegressor"

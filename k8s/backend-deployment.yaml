@@ -1,0 +1,114 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: silentflow-backend
+  namespace: silentflow
+  labels:
+    app: silentflow
+    component: backend
+spec:
+  replicas: 2                    # Minimum 2 replicas for high availability
+  selector:
+    matchLabels:
+      app: silentflow
+      component: backend
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1                # Allow 1 extra pod during update
+      maxUnavailable: 0          # Zero downtime deployments
+  template:
+    metadata:
+      labels:
+        app: silentflow
+        component: backend
+    spec:
+      # ── Security context ────────────────────────────────────────────────────
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 1000
+        fsGroup: 1000
+
+      containers:
+        - name: backend
+          image: silentflow-backend:latest   # Replace with your registry image
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 3001
+              protocol: TCP
+
+          # ── Environment from ConfigMap ─────────────────────────────────────
+          envFrom:
+            - configMapRef:
+                name: silentflow-config
+
+          # ── Resource management (important for Kubernetes scheduling) ───────
+          resources:
+            requests:
+              cpu: "250m"        # 0.25 CPU core
+              memory: "256Mi"
+            limits:
+              cpu: "1000m"       # 1 CPU core max
+              memory: "512Mi"
+            # ── GPU resources (uncomment for CUDA-enabled deployment) ─────────
+            # limits:
+            #   nvidia.com/gpu: 1
+
+          # ── Health probes ──────────────────────────────────────────────────
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 3001
+            initialDelaySeconds: 15
+            periodSeconds: 30
+            failureThreshold: 3
+
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 3001
+            initialDelaySeconds: 10
+            periodSeconds: 10
+            failureThreshold: 3
+
+          # ── Persistent storage mounts ──────────────────────────────────────
+          volumeMounts:
+            - name: db-storage
+              mountPath: /app/data
+            - name: model-storage
+              mountPath: /app/models
+
+      volumes:
+        - name: db-storage
+          persistentVolumeClaim:
+            claimName: silentflow-db-pvc
+        - name: model-storage
+          persistentVolumeClaim:
+            claimName: silentflow-models-pvc
+
+---
+# ── PersistentVolumeClaims ───────────────────────────────────────────────────
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: silentflow-db-pvc
+  namespace: silentflow
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: silentflow-models-pvc
+  namespace: silentflow
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 500Mi

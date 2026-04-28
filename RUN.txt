@@ -1,0 +1,18 @@
+Backend (Python Flask) — port 3001 by default
+  cd backend
+  python -m venv .venv
+  .venv\Scripts\activate
+  pip install -r requirements.txt
+  python app.py
+
+  Layout: app.py (Flask app + blueprints), config.py, database.py, datetime_utils.py,
+  routes/*.py (HTTP), services/*.py (domain logic).
+
+Frontend (React + Vite) — dev server proxies /api to the backend
+  cd frontend
+  npm install
+  npm run dev
+
+Open http://localhost:5173 — use Manager or Employee demo login (any email/password).
+
+Reset demo data: delete backend\data\db.json (it is recreated from seed.json on next start).
